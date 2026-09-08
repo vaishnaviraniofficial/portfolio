@@ -1,0 +1,570 @@
+:root {
+  --bg: #F4EFEA;
+  --card-bg: #EAE3DA;
+  --ink: #111111;
+  --ink-muted: #5E5A53;
+  --vermilion: #E03A24;
+  --line: #D8D1C7;
+  --font-display: 'Plus Jakarta Sans', sans-serif;
+  --font-body: 'Inter', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+  background-color: var(--bg);
+}
+
+body {
+  width: 100%;
+  overflow-x: hidden;
+  font-family: var(--font-body);
+  color: var(--ink);
+  background-color: var(--bg);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+.red-dot {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background-color: var(--vermilion);
+  border-radius: 50%;
+  margin-left: 8px;
+  vertical-align: baseline;
+}
+
+.red-dot-lg {
+  width: 22px;
+  height: 22px;
+}
+
+.editorial-sheet {
+  width: 100%;
+  height: 100vh;
+  min-height: 680px;
+  padding: clamp(2rem, 5vh, 4rem) clamp(2rem, 6vw, 6rem);
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--line);
+  box-sizing: border-box;
+  background-color: var(--bg);
+}
+
+.sheet-main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+.sheet-meta-bar,
+.sheet-footer-bar {
+  width: 100%;
+  max-width: 1240px;
+  margin-inline: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  color: var(--ink-muted);
+}
+
+.sheet-meta-bar {
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 14px;
+}
+
+.sheet-footer-bar {
+  border-top: 1px solid var(--line);
+  padding-top: 14px;
+}
+
+.sheet-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.4rem, 4.5vw, 3.8rem);
+  font-weight: 800;
+  line-height: 1.02;
+  color: var(--vermilion);
+  letter-spacing: -1.5px;
+  text-transform: lowercase;
+  white-space: nowrap;
+}
+
+.title-margin {
+  margin-bottom: 2rem;
+}
+
+.spec-label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  color: var(--ink-muted);
+  margin-bottom: 8px;
+}
+
+.two-col-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.35fr;
+  gap: clamp(3rem, 5vw, 5.5rem);
+  align-items: flex-start;
+}
+
+.three-col-layout {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(2rem, 3.5vw, 3rem);
+}
+
+.cover-layout {
+  display: grid;
+  grid-template-columns: 1.35fr 1fr;
+  gap: 4rem;
+  align-items: flex-end;
+}
+
+.cover-title {
+  font-family: var(--font-display);
+  font-size: clamp(3.8rem, 8.5vw, 6.8rem);
+  font-weight: 800;
+  line-height: 0.9;
+  letter-spacing: -2.5px;
+  color: var(--vermilion);
+  text-transform: lowercase;
+  margin-bottom: 18px;
+}
+
+.cover-tagline {
+  font-size: 1.25rem;
+  color: var(--ink);
+  font-weight: 500;
+  letter-spacing: -0.2px;
+}
+
+.cover-right {
+  border-left: 2px solid var(--line);
+  padding-left: 36px;
+}
+
+.cover-desc {
+  font-size: 1.05rem;
+  color: var(--ink-muted);
+  line-height: 1.7;
+}
+
+.links-row {
+  width: 100%;
+  max-width: 1240px;
+  margin-inline: auto;
+  display: flex;
+  gap: 32px;
+  border-top: 1px solid var(--line);
+  padding-top: 16px;
+}
+
+.editorial-link {
+  color: var(--ink);
+  text-decoration: none;
+  font-size: 0.92rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: color 0.2s ease;
+}
+
+.editorial-link:hover {
+  color: var(--vermilion);
+}
+
+.statement-box {
+  margin-top: 22px;
+  font-size: 1.05rem;
+  color: var(--ink);
+  line-height: 1.75;
+}
+
+.statement-box p {
+  margin-bottom: 14px;
+}
+
+.timeline-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  border-left: 2px solid var(--line);
+  padding-left: 36px;
+}
+
+.meta-year {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--vermilion);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+
+.school-name {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin: 2px 0;
+  letter-spacing: -0.3px;
+}
+
+.degree-title {
+  font-size: 0.95rem;
+  color: var(--ink-muted);
+}
+
+.skills-wrapper {
+  width: 100%;
+}
+
+.spec-card {
+  border-top: 2px solid var(--ink);
+  padding-top: 18px;
+}
+
+.col-index {
+  font-size: 0.8rem;
+  font-weight: 800;
+  color: var(--vermilion);
+}
+
+.spec-title {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 800;
+  margin: 6px 0 18px;
+  text-transform: lowercase;
+  letter-spacing: -0.5px;
+}
+
+.spec-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.spec-list li {
+  font-size: 1rem;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 8px;
+}
+
+.spec-list li span:last-child {
+  color: var(--ink-muted);
+  font-size: 0.88rem;
+}
+
+.project-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.65fr;
+  gap: clamp(3rem, 5vw, 5.5rem);
+  align-items: flex-start;
+}
+
+.project-num {
+  font-family: var(--font-display);
+  font-size: clamp(2.8rem, 4.5vw, 4rem);
+  font-weight: 800;
+  color: var(--ink);
+  line-height: 1;
+  margin-bottom: 6px;
+}
+
+.tag-pill {
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: var(--vermilion);
+  background: rgba(224, 58, 36, 0.08);
+  padding: 6px 12px;
+  border-radius: 2px;
+  display: inline-block;
+  margin-top: 18px;
+}
+
+.project-detail-box {
+  border-left: 2px solid var(--line);
+  padding-left: 36px;
+}
+
+.project-headline {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 800;
+  margin-bottom: 18px;
+  letter-spacing: -0.4px;
+}
+
+.editorial-bullets {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.editorial-bullets li {
+  font-size: 1.02rem;
+  color: var(--ink);
+  position: relative;
+  padding-left: 22px;
+  line-height: 1.65;
+}
+
+.editorial-bullets li::before {
+  content: "—";
+  position: absolute;
+  left: 0;
+  color: var(--vermilion);
+  font-weight: 700;
+}
+
+.cert-wrapper {
+  width: 100%;
+}
+
+.cert-card-layout {
+  background: var(--card-bg);
+  border: 1px solid var(--line);
+  padding: clamp(2.2rem, 4vh, 3.2rem);
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 3.5rem;
+  align-items: center;
+}
+
+.cert-title {
+  font-family: var(--font-display);
+  font-size: 1.45rem;
+  font-weight: 800;
+  margin: 6px 0 4px;
+  letter-spacing: -0.4px;
+}
+
+.cert-provider {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--vermilion);
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+}
+
+.thankyou-title {
+  font-family: var(--font-display);
+  font-size: clamp(3.4rem, 7vw, 5.5rem);
+  font-weight: 800;
+  line-height: 0.92;
+  letter-spacing: -2px;
+  color: var(--vermilion);
+  text-transform: lowercase;
+}
+
+.contact-list-editorial {
+  border-top: 2px solid var(--ink);
+  padding-top: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.contact-entry {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-val {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--ink);
+  text-decoration: none;
+  transition: color 0.2s ease;
+  letter-spacing: -0.2px;
+}
+
+.contact-val:hover {
+  color: var(--vermilion);
+}
+
+.project-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 24px;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+}
+
+.project-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  text-decoration: none;
+  color: var(--ink);
+  border: 1.5px solid var(--ink);
+  padding: 8px 16px;
+  border-radius: 2px;
+  transition: all 0.2s ease;
+}
+
+.project-btn:hover {
+  background-color: var(--vermilion);
+  border-color: var(--vermilion);
+  color: #ffffff;
+}
+
+.project-btn-secondary {
+  border-color: transparent;
+  color: var(--ink-muted);
+  padding: 8px 10px;
+}
+
+.project-btn-secondary:hover {
+  background-color: transparent;
+  color: var(--vermilion);
+}
+
+@media (max-width: 900px) {
+  html {
+    scroll-snap-type: none;
+  }
+
+  .editorial-sheet {
+    height: auto;
+    min-height: auto;
+    padding: 5rem 2rem;
+  }
+
+  .cover-layout,
+  .two-col-layout,
+  .three-col-layout,
+  .project-layout,
+  .cert-card-layout {
+    grid-template-columns: 1fr;
+    gap: 2.8rem;
+  }
+
+  .cover-right,
+  .timeline-stack,
+  .project-detail-box {
+    border-left: none;
+    padding-left: 0;
+    border-top: 1px solid var(--line);
+    padding-top: 24px;
+  }
+
+  .sheet-meta-bar {
+    margin-bottom: 2rem;
+  }
+
+  .sheet-footer-bar {
+    margin-top: 3rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .editorial-sheet {
+    padding: 3.8rem 1.25rem;
+  }
+
+  .cover-title {
+    font-size: 3.2rem;
+    letter-spacing: -1.5px;
+    margin-bottom: 14px;
+  }
+
+  .cover-tagline {
+    font-size: 1.1rem;
+    line-height: 1.5;
+  }
+
+  .cover-desc {
+    font-size: 0.98rem;
+  }
+
+  .sheet-title {
+    font-size: 2.3rem;
+    white-space: normal;
+  }
+
+  .thankyou-title {
+    font-size: 3.2rem;
+  }
+
+  .project-num {
+    font-size: 2.4rem;
+  }
+
+  .project-headline {
+    font-size: 1.35rem;
+  }
+
+  .school-name {
+    font-size: 1.1rem;
+  }
+
+  .editorial-bullets li {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    margin-bottom: 4px;
+  }
+
+  .statement-box p {
+    font-size: 0.98rem;
+    line-height: 1.75;
+  }
+
+  .spec-list li {
+    font-size: 0.95rem;
+    padding-bottom: 10px;
+  }
+
+  .contact-val {
+    font-size: 1.05rem;
+    word-break: break-word;
+  }
+
+  .links-row {
+    flex-direction: column;
+    gap: 12px;
+    padding-top: 14px;
+  }
+
+  .sheet-meta-bar,
+  .sheet-footer-bar {
+    font-size: 0.72rem;
+    letter-spacing: 0.8px;
+  }
+
+  .cert-card-layout {
+    padding: 1.8rem 1.25rem;
+    gap: 1.8rem;
+  }
+}
